@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project demonstrates a simulation of the Dubins car dynamics along with a comparison of its trajectory against predictions made by a pre-trained neural network. The Dubins car model is commonly used in path planning and optimal path problems; it represents a simplified vehicle with state variables for position \((x, y)\) and heading angle \(\theta\).
+This project demonstrates a simulation of the Dubins car dynamics along with a comparison of its trajectory against predictions made by a pre-trained neural network. The Dubins car model is commonly used in path planning and optimal path problems; it represents a simplified vehicle with state variables for position \((x, y)\) and heading angle (θ).
 
 ---
 
