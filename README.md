@@ -1,21 +1,18 @@
-# Dubins Car Dynamics Simulation & Neural Network Predictions
+# Dubins Car Dynamics Simulation & Fully Connected Neural Network
 
-## Overview
 
-This project demonstrates a simulation of the Dubins car dynamics along with a comparison of its trajectory against predictions made by a pre-trained neural network. The Dubins car model is commonly used in path planning and optimal path problems; it represents a simplified vehicle with state variables for position \((x, y)\) and heading angle (θ).
+This project demonstrates a discrete-time simulation of the Dubins car, a simplified vehicle model frequently used in path planning and navigation problems. The Dubins car is characterized by its non-linear dynamics and is defined by its position and steering angle. In our simulation, the vehicle's evolution is governed by the following discrete-time model:
 
----
+Let $h$ be a step size, $v$ a velocity, and $u$ a constant control. The Dubins car model (in discrete time) can be described as:
 
-## Main Features
-
-- **Dubins Car Dynamics Simulation:**  
-  Computes the vehicle's motion over time using the standard Dubins car differential equations:
-  
-  - dx/dt = u · cos(θ)
-  - dy/dt = u · sin(θ)
-  - dθ/dt = w
-  
-  Here, _u_ is the linear velocity (often assumed constant) and _w_ is the angular velocity.
+```math
+  x_{t+1} = f(x_t) = \begin{bmatrix}
+                        x_{t}^{(1)} + h v \sin(x_{t}^{(3)}) \\
+                        x_{t}^{(2)} + h v \cos(x_{t}^{(3)}) \\
+                        x_{t}^{(3)} + h u
+                      \end{bmatrix}
+```
+  where $x_{t}^{(1)}$ represents the $x$-position of the car at instant $t$, $x_{t}^{(2)}$ the $y$-position, and $x_{t}^{(3)}$ is its steering angle. Note that this dynamics is non-linear.
 
 - **Neural Network Predictions:**  
   Utilizes a pre-trained neural network to predict the vehicle's trajectory starting from the same initial state.
